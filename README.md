@@ -1,7 +1,7 @@
 # easy_gvim
-off the shelf gVIM
+Off the shelf gVIM, just unzip and it should be ready to use.
 
-Optimized for C/C++ development
+Optimized for C/C++ development.
 
 user gvim.exe to get started.
 
