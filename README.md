@@ -3,7 +3,9 @@ Off the shelf gVIM, just unzip and it should be ready to use.
 
 Optimized for C/C++ development.
 
-user gvim.exe to get started.
+use gvim.exe to get started.
+
+Some keys are remapped in _vimrc and _gvimrc
 
 :NERDTree to open the file tree
 
