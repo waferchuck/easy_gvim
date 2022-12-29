@@ -7,6 +7,6 @@ user gvim.exe to get started.
 
 :NERDTree to open the file tree
 
-![image](https://user-images.githubusercontent.com/31635002/209905758-cfe1337b-41d5-4a18-a331-eb3c07cd4c33.png)
+![image](https://user-images.githubusercontent.com/31635002/209905920-64a9b08b-edd4-4199-a000-f49444028c8a.png)
 
 
