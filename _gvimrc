@@ -87,6 +87,7 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
 
 "use \p to search highlighted keyword
 vnoremap <leader>g y:Grep <C-R>" <CR>
+nnoremap <leader>G :Grep <C-R><C-W> <CR>
 
 
 
@@ -132,12 +133,17 @@ highlight FloatBorder guifg=#ffaa00 guibg=#444444
 "make the file name bar look blue
 highlight StatusLine guibg=#87afff guifg=black ctermbg=cyan ctermfg=white
 highlight StatusLineNC guibg=grey50 guifg=black ctermbg=black ctermfg=grey
-highlight QuickFixLine ctermbg=grey ctermfg=black guibg=DarkSeaGreen1 guifg=#000000
+highlight QuickFixLine ctermbg=grey ctermfg=black guibg=gray80 guifg=#000000
 
 autocmd VimEnter * execute "split | resize " . (winheight(0) * 4/5)
 autocmd VimEnter * execute "vsplit | vertical resize " . (winwidth(0) * 7/10)
 
 hi Normal guibg=#282a36
+
 set guioptions-=L
+
+filetype on
+filetype plugin on
+
 
 "autocmd VimEnter * NERDTree
