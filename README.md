@@ -10,6 +10,7 @@ Some keys are remapped in _vimrc and _gvimrc
 
 :NERDTree to open the file tree
 
-![image](https://user-images.githubusercontent.com/31635002/209905920-64a9b08b-edd4-4199-a000-f49444028c8a.png)
+![image](https://github.com/user-attachments/assets/886da6a6-0a10-4056-9f1a-bf820cb79227)
+
 
 
