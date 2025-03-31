@@ -137,5 +137,6 @@ highlight QuickFixLine ctermbg=grey ctermfg=black guibg=DarkSeaGreen1 guifg=#000
 autocmd VimEnter * execute "split | resize " . (winheight(0) * 4/5)
 autocmd VimEnter * execute "vsplit | vertical resize " . (winwidth(0) * 7/10)
 
+hi Normal guibg=#282a36
 
 "autocmd VimEnter * NERDTree
