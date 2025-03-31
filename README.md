@@ -1,5 +1,6 @@
 # easy_gvim
 Off the shelf gVIM, just unzip and it should be ready to use.
+copy _gvimrc to your local C:\ProgramFiles\Vim
 
 Optimized for C/C++ development.
 
