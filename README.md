@@ -10,7 +10,9 @@ Some keys are remapped in _vimrc and _gvimrc
 
 auto popout enabled by default.
 
-![image](https://github.com/user-attachments/assets/e7a7f77d-1766-4608-b33b-776534d4fd21)
+![image](https://github.com/user-attachments/assets/1caad088-b11a-4ab3-832b-f71ae9eb245c)
+
+
 
 
 
