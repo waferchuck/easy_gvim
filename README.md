@@ -8,9 +8,10 @@ use gvim.exe to get started.
 
 Some keys are remapped in _vimrc and _gvimrc
 
-:NERDTree to open the file tree
+auto popout enabled by default.
 
-![image](https://github.com/user-attachments/assets/2c9469d8-cf55-40e6-ac6c-0be2b68ab199)
+![image](https://github.com/user-attachments/assets/e7a7f77d-1766-4608-b33b-776534d4fd21)
+
 
 
 
