@@ -17,16 +17,23 @@ set expandtab
 set cindent
 "exec 'cd ' . fnameescape('D:\RTC_storage\Local_PurionH_V4.1_Int_t1008097_Workspace\Src\RealTimeApplications')
 colorscheme evening
-set guifont=Consolas:h12:cANSI
+"set guifont=Consolas:h13:cANSI
+"set guifont=Cascadia_Mono:h13:cANSI
+set guifont=Consolas:h13:cANSI
+
 
 "set the default size of VIM
-set lines=65 columns=210
+set lines=75 columns=250
 "set the default window postion
 winpos 360 700
 
 map <S-h> ^
 map <S-l> $
-nmap <S-k> [[
+map <S-j> <c-]> "jump to function defination tag"
+map <S-t> <c-t> "jump back"
+nmap <S-k> [[ "jump to function head"
+nmap { [[
+map <S-o> <C-o>
 inoremap <C-Space> <C-p>
 inoremap <C-i> <C-]>
 inoremap <expr> <Tab> getline('.')[col('.')-2] !~ '^\s\?$' \|\| pumvisible()
@@ -85,9 +92,17 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
 "xnoremap <leader>g :<C-u>Grep <C-R>=escape(@", ' ')<CR> *.c *.h<CR>
 "vnoremap <leader>g y:Grep <C-R>" *.c *.cpp ..\Include\*.h<CR>:copen<CR>
 
-"use \p to search highlighted keyword
+"command! -nargs=1 GrepCurrent silent! execute 'vimgrep /<args>/j %' | copen
+command! -nargs=1 GrepCurrent silent! execute 'lvimgrep /<args>/j %' | lopen
+
+"use \g to search highlighted keyword
 vnoremap <leader>g y:Grep <C-R>" <CR>
+"use \G to searrch the whole wold
 nnoremap <leader>G :Grep <C-R><C-W> <CR>
+
+"uee \l to list the whole word from the current file
+nnoremap <Leader>l :execute 'vimgrep /' . expand('<cword>') . '/j %' \| copen<CR>
+
 
 
 
@@ -98,7 +113,8 @@ set foldlevel=99
 
 syntax enable
 
-
+set undofile
+set undodir=~./vim/undodir
 
 set diffexpr=MyDiff()
 function! MyDiff()
@@ -135,8 +151,8 @@ highlight StatusLine guibg=#87afff guifg=black ctermbg=cyan ctermfg=white
 highlight StatusLineNC guibg=grey50 guifg=black ctermbg=black ctermfg=grey
 highlight QuickFixLine ctermbg=grey ctermfg=black guibg=gray80 guifg=#000000
 
-autocmd VimEnter * execute "split | resize " . (winheight(0) * 4/5)
-autocmd VimEnter * execute "vsplit | vertical resize " . (winwidth(0) * 7/10)
+"autocmd VimEnter * execute "split | resize " . (winheight(0) * 4/5)
+"autocmd VimEnter * execute "vsplit | vertical resize " . (winwidth(0) * 7/10)
 
 hi Normal guibg=#282a36
 
@@ -145,5 +161,39 @@ set guioptions-=L
 filetype on
 filetype plugin on
 
-
+"set renderoptions=type:directx,renmode:5,taamode:1,gamma:2.2
+"set renderoptions=type:directx,renmode:5
 "autocmd VimEnter * NERDTree
+
+
+nmap ff <Plug>(easymotion-s2)
+"hi link EasyMotionTarget Error
+hi link EasyMotionTarget2First Search
+hi link EasyMotionTarget2Second Search
+"hi link EasyMotionShade Comment
+let g:EasyMotion_do_shade = 0
+let g:EasyMotion_smartcase = 1
+
+"set updatetime=500
+"set redrawtime=1000
+
+let g:tagbar_left=1
+nnoremap <F10> :TagbarToggle<CR>
+nnoremap <F2> <C-w>
+
+autocmd VimEnter * execute "split | resize " . (winheight(0) * 4/5)
+autocmd VimEnter * execute "vsplit | vertical resize " . (winwidth(0) * 7/10)
+
+autocmd VimEnter * TagbarOpen
+
+set updatetime=1000
+autocmd CursorHold * silent! :TagbarUpdate
+autocmd BufEnter * silent! :TagbarUpdate
+
+"make comments dark green"
+highlight Comment guifg=#6a9955 ctermfg=Red
+
+
+
+au FileType c,cpp,objc,objcpp call rainbow#load()
+
