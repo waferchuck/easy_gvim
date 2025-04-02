@@ -5,6 +5,7 @@ copy _gvimrc to your local C:\ProgramFiles\Vim
 Optimized for C/C++ development.
 
 it has a few plugins installed
+
 ![image](https://github.com/user-attachments/assets/8a4cdc38-eb9c-46e2-88e5-984b48fd9f3f)
 
 
