@@ -25,6 +25,8 @@ Some keys are remapped in _vimrc and _gvimrc based on my personal preferences,  
 4. Shift+o to jump back
 5. \l to search and list the current keyword(where the cursor is) in this document
 6. \G to search and list the current keyword(Where the cursor is) in the current folder
+7. F10 to toggle the Tagbar
+8. F2 to relace ctrl+w to switch window ( i just personally dont like ctrl)
 
 
 ![image](https://github.com/user-attachments/assets/ab2ec75d-b0f3-4104-a470-b24eda530ab3)
