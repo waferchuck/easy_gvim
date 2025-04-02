@@ -14,9 +14,10 @@ The plugins are
 1. A useful welcome screen showing you recent files
 2. Tagbar auto list func/var/defines in the current file
 3. auto-pairs () {} []
-4. put __ under the cursor word.
-5. rainbow make nested () with different color
-6. Auto popout the omni-complete menu (tab to confirm, Enter to select next)
+4. showing __ under all the cursor word.
+5. EasyMotion to jump quickly
+6. rainbow make nested () with different color
+7. Auto popout the omni-complete menu (tab to confirm, Enter to select next)
 
 Some keys are remapped in _vimrc and _gvimrc based on my personal preferences,  feel free to edit in _gvimrc
 1. Shift+h/l to move cursor to the front/end of the line, instead of using $ and ^
@@ -27,6 +28,7 @@ Some keys are remapped in _vimrc and _gvimrc based on my personal preferences,  
 6. \G to search and list the current keyword(Where the cursor is) in the current folder
 7. F10 to toggle the Tagbar
 8. F2 to relace ctrl+w to switch window ( i just personally dont like ctrl)
+9. ff to invoke the EasyMotion 
 
 
 ![image](https://github.com/user-attachments/assets/ab2ec75d-b0f3-4104-a470-b24eda530ab3)
