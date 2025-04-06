@@ -79,9 +79,10 @@ Plug 'mhinz/vim-startify'
 Plug 'frazrepo/vim-rainbow'
 Plug 'preservim/tagbar'
 Plug 'jiangmiao/auto-pairs'
+"Plug 'itchyny/lightline.vim'
 "Plug 'tweekmonster/startuptime.vim'
 "Plug 'dstein64/vim-startuptime'
-"Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
 
 
