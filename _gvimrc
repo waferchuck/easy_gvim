@@ -20,19 +20,19 @@ colorscheme evening
 "set guifont=Consolas:h13:cANSI
 "set guifont=Cascadia_Mono:h13:cANSI
 set guifont=Consolas:h13:cANSI
-
+"set guifont=Cascadia_Code:h13:cANSI
 
 "set the default size of VIM
 set lines=75 columns=250
 "set the default window postion
-winpos 360 700
+winpos 160 700
 
 map <S-h> ^
 map <S-l> $
 map <S-j> <c-]> "jump to function defination tag"
 map <S-t> <c-t> "jump back"
-nmap <S-k> [[ "jump to function head"
-nmap { [[
+map <S-k> [[ "jump to function head"
+nmap { [{
 map <S-o> <C-o>
 inoremap <C-Space> <C-p>
 inoremap <C-i> <C-]>
@@ -88,6 +88,7 @@ inoremap <expr> <Enter> pumvisible() ? "\<C-n>" : "\<Enter>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
 
 
+let mapleader=" "
 "set jumpoptions=stack
 "xnoremap <leader>g :<C-u>Grep <C-R>=escape(@", ' ')<CR> *.c *.h<CR>
 "vnoremap <leader>g y:Grep <C-R>" *.c *.cpp ..\Include\*.h<CR>:copen<CR>
@@ -114,7 +115,7 @@ set foldlevel=99
 syntax enable
 
 set undofile
-set undodir=~./vim/undodir
+set undodir=$HOME/.vim/undodir
 
 set diffexpr=MyDiff()
 function! MyDiff()
@@ -194,6 +195,96 @@ autocmd BufEnter * silent! :TagbarUpdate
 highlight Comment guifg=#6a9955 ctermfg=Red
 
 
+
+nnoremap <SPACE> <Nop>
+
+"Configure ALE"
+" ?? ALE
+let g:ale_enabled = 0
+
+" ????????(?????????)
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
+autocmd BufWritePost *.c,*.h ALELint
+
+let g:ale_linters = {
+\   'c': ['gcc'],
+\   'cpp': ['gcc'],
+\}
+
+let g:ale_c_gcc_executable = 'C:\mingw-w64\bin\gcc'
+let g:ale_cpp_gcc_executable = 'C:\mingw-w64\bin\g++'
+
+
+let g:ale_hover_to_floating_preview = 1
+let g:ale_cpp_gcc_options = '-Wall -Wextra -std=c++17 -I../Include/ -I../../../RealTimeApplications_Common/Include/'
+
+
+let g:ale_c_cc_options = '-Wall -Wextra -std=c11 
+							\-I"C:/WindRiver/vxworks-6.4/target/usr/h/wrn/coreip/" 		
+							\-I"C:/WindRiver/vxworks-6.4/target/h/"  
+							\-I"C:/WindRiver/vxworks-6.4/target/h/vxWorks.h"  
+							\-I"C:/WindRiver/vxworks-6.4/target/usr/h/"  
+							\-I"C:/WindRiver/vxworks-6.4/target/h/wrn/coreip"  
+							\-I"C:/WindRiver/vxworks-6.4/target/usr/h/wrn/coreip/"  
+							\-I"C:/WindRiver/vxworks-6.4/target/usr/h/wrn/coreip/net" 
+							\-I../../../RealTimeApplications_Common/Include/ 
+							\-I../Include/  
+							\-I../../flNetReceive/ 
+							\-I../../LINAC/Include/ab_super.h 
+							\-I../Include/  
+							\-I../../flNetReceive/NetStruct.h 		 					
+							\-I../../DEBUG/Include/  
+							\-I../../PMAC/Include/ 
+							\-I../../flNetReceive/  
+							\-I../../MSG/Include/  
+							\-I../../INIT/Include/  
+							\-I../../ALARM/Include/  
+							\-I../../MDP/Include/  
+							\-I../../MSG/Include/  
+							\-I../../MathUtil/Include/  
+							\-I../../DOSE/Include/ 
+							\-I../../LINAC/Include/  
+							\-I../../AMU/Include/  
+							\-I../../VAC/Include/  
+							\-I../../IC/Include/ 
+							\-I../../ARB/Include/  
+							\-I../../EL_SH/Include/  
+							\-I../../IO_Sys_Defines/Include/  
+							\-I../../IO_Sys/Include/  
+							\-I../../IO_Sys/Include/  
+							\-I"C:/ACE_TAO/ACE_wrappers/"  
+							\-I../../INIT/Include/ 
+							\-I../Include/ '
+
+highlight ALEErrorHighlight ctermfg=Red guifg=Red
+autocmd FileType alepreview syntax match ALEErrorHighlight /error/
+
+" ???????????
+augroup BoldBrackets
+  autocmd!
+  autocmd BufEnter * call matchadd('BoldBracketsGroup', '[(){}\[\]]')
+augroup END
+
+" ??????
+hi BoldBracketsGroup gui=bold cterm=bold
+
+
+highlight Search guibg=lightblue guifg=black
+highlight Statement guifg=skyblue
+
+set pumheight=10
+
+highlight StartifyFile    ctermfg=111 guifg=lightsteelblue
+highlight StartifyPath    ctermfg=245 guifg=gray80
+
+highlight qfDirectory guifg=yellow
+highlight qfFileName guifg=lightsteelblue
+highlight QuickFixLine guifg=black
+
+highlight TagbarMacro ctermfg=Magenta guifg=Purple
 
 au FileType c,cpp,objc,objcpp call rainbow#load()
 
